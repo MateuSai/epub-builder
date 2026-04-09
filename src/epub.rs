@@ -505,11 +505,16 @@ impl<Z: Zip> EpubBuilder<Z> {
         self.escape_html = val;
     }
 
+    /// Sets the authors of the EPUB
+    pub fn set_languages(&mut self, value: Vec<String>) {
+        self.metadata.lang = value;
+    }
+
     /// Adds a language of the EPUB
     ///
     /// This is quite important as EPUB renderers rely on it
     /// for e.g. hyphenating words.
-    pub fn add_lang<S: Into<String>>(&mut self, value: S) {
+    pub fn add_language<S: Into<String>>(&mut self, value: S) {
         self.metadata.lang.push(value.into());
     }
 
