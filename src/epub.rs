@@ -505,7 +505,7 @@ impl<Z: Zip> EpubBuilder<Z> {
         self.escape_html = val;
     }
 
-    /// Sets the authors of the EPUB
+    /// Sets the languages of the EPUB
     pub fn set_languages(&mut self, value: Vec<String>) {
         self.metadata.lang = value;
     }
